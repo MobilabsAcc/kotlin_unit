@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id='@+id/resultTextView'
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom|right"
+        android:padding="20dp"
+        android:textSize="32sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/resultTextView"
+        android:layout_weight="2"
+        android:background="@color/dark_grey"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/ButtonRowLayoutStyle">
+
+            <TextView
+                style="@style/ButtonStyle"
+                android:text="7"/>
+
+            <TextView
+                style="@style/ButtonStyle"
+                android:text="8"/>
+
+            <TextView
+                style="@style/ButtonStyle"
+                android:text="9"/>
+
+            <TextView
+                style="@style/FunctionButtonStyle"
+                android:text="@string/symbol_divide"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/ButtonRowLayoutStyle">
+
+            <TextView
+                style="@style/ButtonStyle"
+                android:text="4"/>
+
+            <TextView
+                style="@style/ButtonStyle"
+                android:text="5"/>
+
+            <TextView
+                style="@style/ButtonStyle"
+                android:text="6"/>
+
+            <TextView
+                style="@style/FunctionButtonStyle"
+                android:text="@string/symbol_multiply"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/ButtonRowLayoutStyle">
+
+            <TextView
+                android:id="@+id/one"
+                style="@style/ButtonStyle"
+                android:text="1"/>
+
+            <TextView
+                android:id="@+id/two"
+                style="@style/ButtonStyle"
+                android:text="2"/>
+
+            <TextView
+                android:id="@+id/three"
+                style="@style/ButtonStyle"
+                android:text="3"/>
+
+            <TextView
+                style="@style/FunctionButtonStyle"
+                android:text="@string/symbol_subtract"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/ButtonRowLayoutStyle">
+
+            <TextView
+                style="@style/ButtonStyle"
+                android:text="@string/symbol_clear"/>
+
+            <TextView
+                style="@style/ButtonStyle"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/equals"
+                style="@style/ButtonStyle"
+                android:background="@color/light_grey"
+                android:text="@string/symbol_equals"/>
+
+            <TextView
+                android:id="@+id/plus"
+                style="@style/FunctionButtonStyle"
+                android:text="@string/symbol_addition"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

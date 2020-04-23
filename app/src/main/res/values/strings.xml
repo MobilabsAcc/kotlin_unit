@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TEST app</string>
+
+
+    <string name="symbol_multiply">×</string>
+    <string name="symbol_divide">÷</string>
+    <string name="symbol_addition">+</string>
+    <string name="symbol_subtract">-</string>
+    <string name="symbol_clear">CL</string>
+    <string name="symbol_equals">=</string>
+</resources>
