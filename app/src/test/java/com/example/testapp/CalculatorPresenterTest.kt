@@ -29,7 +29,6 @@ class CalculatorPresenterTest {
     @Test
     @Throws(Exception::class)
     fun addValue_subtraction() {
-
         calculatorPresenter.addValue("1")
         calculatorPresenter.addValue("-")
         calculatorPresenter.addValue("2")
@@ -88,6 +87,25 @@ class CalculatorPresenterTest {
         calculatorPresenter.addValue("7")
         calculatorPresenter.addValue("-")
         calculatorPresenter.addValue("")
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("4")
+    }
+    @Test
+    @Throws(Exception::class)
+    fun addValue_onlyFirstMathSignIsConsidered() {
+        calculatorPresenter.addValue("7")
+        calculatorPresenter.addValue("-")
+        calculatorPresenter.addValue("-")
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("4")
+
+        calculatorPresenter.addValue("7")
+        calculatorPresenter.addValue("-")
+        calculatorPresenter.addValue("-")
+        calculatorPresenter.addValue("/")
+        calculatorPresenter.addValue("*")
         calculatorPresenter.addValue("3")
         calculatorPresenter.addValue("=")
         Mockito.verify(view).showMessage("4")
