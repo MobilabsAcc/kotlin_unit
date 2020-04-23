@@ -28,25 +28,73 @@ class CalculatorPresenterTest {
     @Test
     @Throws(Exception::class)
     fun addValue_subtraction() {
-        //TODO: fill it
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("-")
+        calculatorPresenter.addValue("1")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("1")
     }
 
     @Test
     @Throws(Exception::class)
     fun addValue_division() {
-        //TODO: fill it
+//        calculatorPresenter.addValue("1")
+//        calculatorPresenter.addValue("/")
+//        calculatorPresenter.addValue("0")
+//        calculatorPresenter.addValue("=")
+//        Mockito.verify(view).showMessage("Error")
+
+        calculatorPresenter.addValue("1")
+        calculatorPresenter.addValue("/")
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("0.5")
     }
 
     @Test
     @Throws(Exception::class)
     fun addValue_multiplication() {
-        //TODO: fill it
+        calculatorPresenter.addValue("1")
+        calculatorPresenter.addValue("*")
+        calculatorPresenter.addValue("0")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("0")
     }
 
     @Test
     @Throws(Exception::class)
     fun addValue_everything() {
-        //TODO: fill it
+        calculatorPresenter.addValue("1")
+        calculatorPresenter.addValue("/")
+        calculatorPresenter.addValue("0")
+        calculatorPresenter.addValue("+")
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("Error")
+
+        calculatorPresenter.addValue("1")
+        calculatorPresenter.addValue("/")
+        calculatorPresenter.addValue("1")
+        calculatorPresenter.addValue("+")
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("3")
     }
+
+    @Test
+    @Throws(Exception::class)
+    fun AddValue_inOrder() {
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("*")
+        calculatorPresenter.addValue("(")
+        calculatorPresenter.addValue("1")
+        calculatorPresenter.addValue("+")
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue(")")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("6")
+    }
+
+
 
 }
