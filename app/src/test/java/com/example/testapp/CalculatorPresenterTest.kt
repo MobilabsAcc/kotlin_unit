@@ -28,25 +28,67 @@ class CalculatorPresenterTest {
     @Test
     @Throws(Exception::class)
     fun addValue_subtraction() {
-        //TODO: fill it
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("-")
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("1")
     }
 
     @Test
     @Throws(Exception::class)
     fun addValue_division() {
-        //TODO: fill it
+        calculatorPresenter.addValue("100")
+        calculatorPresenter.addValue("/")
+        calculatorPresenter.addValue("100")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("1")
     }
 
     @Test
     @Throws(Exception::class)
     fun addValue_multiplication() {
-        //TODO: fill it
+        calculatorPresenter.addValue("100")
+        calculatorPresenter.addValue("*")
+        calculatorPresenter.addValue("200")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("20000")
     }
 
     @Test
     @Throws(Exception::class)
     fun addValue_everything() {
-        //TODO: fill it
+        calculatorPresenter.addValue("1")
+        calculatorPresenter.addValue("+")
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("+")
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("/")
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("*")
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("6")
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun addValue_clear() {
+        calculatorPresenter.addValue("1")
+        calculatorPresenter.addValue("CL")
+        Mockito.verify(view).showMessage("")
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun addValue_order() {
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("+")
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("*")
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("6")
     }
 
 }
