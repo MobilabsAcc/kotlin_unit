@@ -69,7 +69,6 @@ class CalculatorPresenterTest {
         calculatorPresenter.addValue("3")
         calculatorPresenter.addValue("=")
         Mockito.verify(view).showMessage("30")
-        //TODO: fill it
     }
 
     @Test
@@ -85,7 +84,7 @@ class CalculatorPresenterTest {
 
     @Test
     @Throws(Exception::class)
-    fun addValue_noneDoeasNotMatter() {
+    fun addValue_noneDoesNotMatter() {
         calculatorPresenter.addValue("7")
         calculatorPresenter.addValue("-")
         calculatorPresenter.addValue("")
@@ -93,7 +92,5 @@ class CalculatorPresenterTest {
         calculatorPresenter.addValue("=")
         Mockito.verify(view).showMessage("4")
     }
-
-
 
 }
