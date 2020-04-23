@@ -28,25 +28,60 @@ class CalculatorPresenterTest {
     @Test
     @Throws(Exception::class)
     fun addValue_subtraction() {
-        //TODO: fill it
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("-")
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("1")
     }
 
     @Test
     @Throws(Exception::class)
     fun addValue_division() {
-        //TODO: fill it
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("/")
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("1")
     }
 
     @Test
     @Throws(Exception::class)
     fun addValue_multiplication() {
-        //TODO: fill it
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("*")
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("9")
     }
 
     @Test
     @Throws(Exception::class)
     fun addValue_everything() {
-        //TODO: fill it
-    }
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("+")
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("*")
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("12")    }
+
+    @Test
+    @Throws(Exception::class)
+    fun addValue_zeroDivision() {
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("/")
+        calculatorPresenter.addValue("0")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("Infinity")    }
+
+    @Test
+    @Throws(Exception::class)
+    fun addValue_zeroMultiplication() {
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("*")
+        calculatorPresenter.addValue("0")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("0")    }
 
 }
