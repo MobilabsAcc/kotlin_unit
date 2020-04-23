@@ -9,9 +9,4 @@ class CalculatorPresenter(
     fun addValue(value: String?) {
         view.showMessage(calculatorHelper.addValue(value))
     }
-
-    interface View {
-        fun showMessage(message: String?)
-    }
-
 }

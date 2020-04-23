@@ -25,9 +25,7 @@ class CalculatorHelper {
             var tempEquation = currentEquation
             for (calculatorSymbol in CalculatorSymbol.values()) {
                 val valueToReplace: String = calculatorSymbol.visual
-                if (valueToReplace != null) {
-                    tempEquation = tempEquation.replace(valueToReplace, calculatorSymbol.maths)
-                }
+                tempEquation = tempEquation.replace(valueToReplace, calculatorSymbol.maths)
             }
             val result: Double
             try {
@@ -45,7 +43,7 @@ class CalculatorHelper {
     }
 
     private fun addSymbol(calculatorSymbol: CalculatorSymbol) {
-        if (currentEquation.length > 0) {
+        if (currentEquation.isNotEmpty()) {
             if (CalculatorSymbol.getSymbol(currentEquation.substring(currentEquation.length - 1)) ===
                 CalculatorSymbol.NONE
             ) {

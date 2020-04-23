@@ -5,10 +5,10 @@ import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
 
-
 class CalculatorPresenterTest {
     lateinit var calculatorPresenter: CalculatorPresenter
     lateinit var view: MainActivity
+
     @Before
     fun before() {
         view = Mockito.mock(MainActivity::class.java)
@@ -28,25 +28,66 @@ class CalculatorPresenterTest {
     @Test
     @Throws(Exception::class)
     fun addValue_subtraction() {
-        //TODO: fill it
+        calculatorPresenter.addValue("6")
+        calculatorPresenter.addValue("-")
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("4")
     }
 
     @Test
     @Throws(Exception::class)
     fun addValue_division() {
-        //TODO: fill it
+        calculatorPresenter.addValue("54")
+        calculatorPresenter.addValue("÷")
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("27")
     }
 
     @Test
     @Throws(Exception::class)
     fun addValue_multiplication() {
-        //TODO: fill it
+        calculatorPresenter.addValue("23")
+        calculatorPresenter.addValue("*")
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("69")
     }
 
     @Test
     @Throws(Exception::class)
     fun addValue_everything() {
-        //TODO: fill it
+        calculatorPresenter.addValue("5")
+        calculatorPresenter.addValue("+")
+        calculatorPresenter.addValue("3")
+        calculatorPresenter.addValue("*")
+        calculatorPresenter.addValue("2")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("11")
     }
 
+    @Test
+    @Throws(Exception::class)
+    fun multiplicationSub() {
+        calculatorPresenter.addValue("10")
+        calculatorPresenter.addValue("*")
+        calculatorPresenter.addValue("8")
+        calculatorPresenter.addValue("-")
+        calculatorPresenter.addValue("6")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("74")
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun divisionMultiplication() {
+        calculatorPresenter.addValue("20")
+        calculatorPresenter.addValue("÷")
+        calculatorPresenter.addValue("4")
+        calculatorPresenter.addValue("*")
+        calculatorPresenter.addValue("6")
+        calculatorPresenter.addValue("=")
+        Mockito.verify(view).showMessage("30")
+    }
 }

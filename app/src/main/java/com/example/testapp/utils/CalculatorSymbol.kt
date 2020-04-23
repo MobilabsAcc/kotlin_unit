@@ -23,7 +23,7 @@ enum class CalculatorSymbol {
     companion object {
         fun getSymbol(character: String): CalculatorSymbol {
             var returnCalculatorSymbol = NONE
-            for (calculatorSymbol in CalculatorSymbol.values()) {
+            for (calculatorSymbol in values()) {
                 if (calculatorSymbol.visual == character) {
                     returnCalculatorSymbol = calculatorSymbol
                     break
