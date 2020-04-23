@@ -38,6 +38,7 @@
                 android:text="9"/>
 
             <TextView
+                android:id="@+id/divide"
                 style="@style/FunctionButtonStyle"
                 android:text="@string/symbol_divide"/>
         </LinearLayout>
@@ -58,6 +59,7 @@
                 android:text="6"/>
 
             <TextView
+                android:id="@+id/multiply"
                 style="@style/FunctionButtonStyle"
                 android:text="@string/symbol_multiply"/>
         </LinearLayout>
@@ -81,6 +83,7 @@
                 android:text="3"/>
 
             <TextView
+                android:id="@+id/minus"
                 style="@style/FunctionButtonStyle"
                 android:text="@string/symbol_subtract"/>
         </LinearLayout>

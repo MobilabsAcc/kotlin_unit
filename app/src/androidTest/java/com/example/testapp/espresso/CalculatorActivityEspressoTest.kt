@@ -31,6 +31,35 @@ class CalculatorActivityEspressoTest {
 
     @Test
     fun checkAdding() {
-   //TODO: fill it
+        onView(withId(R.id.one))
+            .perform(click())
+        onView(withId(R.id.plus))
+            .perform(click())
+        onView(withId(R.id.one))
+            .perform(click())
+        onView(withId(R.id.equals))
+            .perform(click())
+        onView(withId(R.id.resultTextView)).check(matches(withText("2")))
+    }
+
+    @Test
+    fun checkManyOperations() {
+        onView(withId(R.id.one))
+            .perform(click())
+        onView(withId(R.id.multiply))
+            .perform(click())
+        onView(withId(R.id.one))
+            .perform(click())
+        onView(withId(R.id.divide))
+            .perform(click())
+        onView(withId(R.id.one))
+            .perform(click())
+        onView(withId(R.id.minus))
+            .perform(click())
+        onView(withId(R.id.one))
+            .perform(click())
+        onView(withId(R.id.equals))
+            .perform(click())
+        onView(withId(R.id.resultTextView)).check(matches(withText("0")))
     }
 }
